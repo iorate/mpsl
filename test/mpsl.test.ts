@@ -1,7 +1,7 @@
 import * as mpsl from '..';
 
-function checkPublicSuffix(domain: string | null, registerablePart: string | null): void {
-  expect(mpsl.get(domain as string)).toBe(registerablePart);
+function checkPublicSuffix(domain: string, registerablePart: string | null): void {
+  expect(mpsl.get(domain)).toBe(registerablePart);
 }
 
 test('mpsl', () => {
@@ -13,7 +13,7 @@ test('mpsl', () => {
   // Some lines are commented out by iorate.
 
   // null input.
-  checkPublicSuffix(null, null);
+  // checkPublicSuffix(null, null);
   // Mixed case.
   checkPublicSuffix('COM', null);
   checkPublicSuffix('example.COM', 'example.com');
