@@ -45,6 +45,11 @@
   "jest": {
     "preset": "ts-jest"
   },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "packageManager": "yarn@3.1.0",
   "devDependencies": {
     "@types/jest": "^27.0.2",
