@@ -1,6 +1,6 @@
 # mpsl
 
-A relatively small (76KB) port of [the Public Suffix List](https://publicsuffix.org/) to JavaScript/TypeScript.
+A relatively small and fast port of [the Public Suffix List](https://publicsuffix.org/) to JavaScript/TypeScript.
 
 ## Usage
 

@@ -16,7 +16,7 @@ export function get(domain: string): string | null {
   let rules = PSL_RULES;
   for (let i = 0; i < labels.length; ++i) {
     const label = labels[i];
-    const rule = rules[label] || rules._;
+    const rule = rules[label] || rules['*'];
     if (!rule) {
       break;
     } else if (rule === SUFFIX) {
@@ -27,7 +27,7 @@ export function get(domain: string): string | null {
       suffixIndex = i - 1;
       break;
     } else {
-      if (!rule.$) {
+      if (!rule['']) {
         suffixIndex = i;
       }
       rules = rule;
