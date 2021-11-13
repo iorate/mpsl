@@ -1,9 +1,16 @@
 import { PSL_RULES } from './psl-rules';
 
+export type ParseResult = {
+  tld: string;
+  sld: string;
+  domain: string;
+  subdomain: string | null;
+};
+
 const SUFFIX = 1;
 const EXCEPTION = 2;
 
-export function get(domain: string): string | null {
+export function parse(domain: string): ParseResult | null {
   if (typeof domain !== 'string') {
     return null;
   }
@@ -41,8 +48,29 @@ export function get(domain: string): string | null {
   if (suffixIndex + 2 > labels.length) {
     return null;
   }
-  return labels
-    .slice(0, suffixIndex + 2)
-    .reverse()
-    .join('.');
+  return {
+    tld: labels
+      .slice(0, suffixIndex + 1)
+      .reverse()
+      .join('.'),
+    sld: labels[suffixIndex + 1],
+    domain: labels
+      .slice(0, suffixIndex + 2)
+      .reverse()
+      .join('.'),
+    subdomain:
+      labels
+        .slice(suffixIndex + 2)
+        .reverse()
+        .join('.') || null,
+  };
+}
+
+export function get(domain: string): string | null {
+  const result = parse(domain);
+  return result ? result.domain : null;
+}
+
+export function isValid(domain: string): boolean {
+  return parse(domain) != null;
 }
