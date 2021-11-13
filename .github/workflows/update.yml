@@ -19,8 +19,8 @@ jobs:
       - name: install packages
         run: yarn install --immutable
 
-      - name: download psl and generate psl-rules.ts
-        run: yarn prebuild
+      - name: update rules
+        run: yarn update-rules
 
       - name: count changes
         id: changes
