@@ -36,11 +36,13 @@ function generatePSLRules(psl: string): Rules {
         rules = rule;
       }
     }
-    const lastLabel = labels[labels.length - 1];
-    if (!rules[lastLabel]) {
+    const label = labels[labels.length - 1];
+    const rule = rules[label];
+    if (!rule) {
       delete rules[''];
-      rules[lastLabel] = exception ? EXCEPTION : SUFFIX;
-    } else if (rules[lastLabel] === SUFFIX || rules[lastLabel] === EXCEPTION) {
+      rules[label] = exception ? EXCEPTION : SUFFIX;
+    } else if (rule === SUFFIX || rule === EXCEPTION) {
+      // duplicate rule
       continue;
     } else {
       delete rules[''];
