@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import axios from 'axios';
-import punycode from 'punycode';
+// import punycode from 'punycode/';
+import punycode from 'punycode/punycode.js';
 
 type Rules = { readonly [label: string]: 1 | 2 | Rules };
 type MutableRules = { [label: string]: 1 | 2 | MutableRules };
