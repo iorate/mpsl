@@ -51,6 +51,9 @@
     ]
   },
   "packageManager": "yarn@3.1.0",
+  "dependencies": {
+    "punycode": "^2.1.1"
+  },
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
@@ -59,7 +62,6 @@
     "jest": "^27.3.1",
     "microbundle": "^0.14.1",
     "prettier": "^2.4.1",
-    "punycode": "^2.1.1",
     "semantic-release": "^18.0.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
