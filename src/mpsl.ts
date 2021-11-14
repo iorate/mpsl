@@ -1,3 +1,4 @@
+import punycode from 'punycode/';
 import { PSL_RULES } from './psl-rules';
 
 export type ParseResult = {
@@ -23,7 +24,7 @@ export function parse(domain: string): ParseResult | null {
   let rules = PSL_RULES;
   for (let i = 0; i < labels.length; ++i) {
     const label = labels[i];
-    const rule = rules[label] || rules['*'];
+    const rule = rules[punycode.toASCII(label)] || rules['*'];
     if (!rule) {
       break;
     } else if (rule === SUFFIX) {

@@ -14,8 +14,6 @@ console.log(mpsl.get('www.test.ac.jp')); // test.ac.jp
 
 `mpsl.get` does not throw an exception and returns `null` on invalid input.
 
-Before passing domain names containing non-ASCII characters to `mpsl.get`, you should encode them into Punycode strings.
-
 ## Author
 
 [iorate](https://github.com/iorate)
