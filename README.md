@@ -4,7 +4,7 @@ A relatively small and fast port of [the Public Suffix List](https://publicsuffi
 
 ## Usage
 
-`mpsl.get(domain)` returns the registerable part of `domain`.
+`mpsl.get(domain)` returns the registrable part of `domain`.
 
 ```typescript
 import * as mpsl from 'mpsl';

@@ -1,7 +1,7 @@
 import * as mpsl from '..';
 
-function checkPublicSuffix(domain: string | null, registerablePart: string | null): void {
-  expect(mpsl.get(domain!)).toBe(registerablePart);
+function checkPublicSuffix(domain: string | null, registrablePart: string | null): void {
+  expect(mpsl.get(domain!)).toBe(registrablePart);
 }
 
 test('mpsl', () => {
