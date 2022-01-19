@@ -65,6 +65,7 @@
     "test": "jest",
     "update-rules": "TS_NODE_PROJECT=scripts/tsconfig.json TS_NODE_FILES=1 node --loader=ts-node/esm scripts/generate-psl-rules.ts"
   },
+  "sideEffects": false,
   "source": "src/mpsl.ts",
   "type": "module",
   "types": "dist/mpsl.d.ts",
