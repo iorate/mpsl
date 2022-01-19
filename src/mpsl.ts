@@ -68,8 +68,7 @@ export function parse(domain: string): ParseResult | null {
 }
 
 export function get(domain: string): string | null {
-  const result = parse(domain);
-  return result ? result.domain : null;
+  return parse(domain)?.domain ?? null;
 }
 
 export function isValid(domain: string): boolean {
