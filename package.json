@@ -1,61 +1,12 @@
 {
   "name": "mpsl",
   "version": "1.0.0",
-  "description": "A relatively small and fast port of the Public Suffix List",
-  "keywords": [
-    "public-suffix-list",
-    "psl",
-    "effective-top-level-domain",
-    "etld"
-  ],
-  "homepage": "https://github.com/iorate/mpsl#readme",
-  "bugs": "https://github.com/iorate/mpsl/issues",
-  "license": "MIT",
   "author": "iorate (https://github.com/iorate)",
-  "repository": "github:iorate/mpsl",
-  "type": "module",
-  "exports": {
-    "require": "./dist/mpsl.cjs",
-    "default": "./dist/mpsl.modern.js"
-  },
-  "main": "dist/mpsl.cjs",
-  "module": "dist/mpsl.module.js",
-  "unpkg": "dist/mpsl.umd.js",
-  "types": "dist/mpsl.d.ts",
-  "files": [
-    "dist/mpsl.cjs",
-    "dist/mpsl.modern.js",
-    "dist/mpsl.module.js",
-    "dist/mpsl.umd.js",
-    "dist/mpsl.d.ts",
-    "src/mpsl.ts",
-    "src/psl-rules.ts"
-  ],
-  "scripts": {
-    "format": "prettier --write .",
-    "update-rules": "TS_NODE_PROJECT=scripts/tsconfig.json TS_NODE_FILES=1 node --loader=ts-node/esm scripts/generate-psl-rules.ts",
-    "build": "microbundle --format modern,esm,cjs --no-sourcemap && microbundle --format umd --external none --no-sourcemap",
-    "test": "jest"
-  },
-  "prettier": {
-    "arrowParens": "avoid",
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
-  "source": "src/mpsl.ts",
-  "jest": {
-    "preset": "ts-jest"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
-  "packageManager": "yarn@3.1.1",
+  "bugs": "https://github.com/iorate/mpsl/issues",
   "dependencies": {
     "punycode": "^2.1.1"
   },
+  "description": "A relatively small and fast port of the Public Suffix List",
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
@@ -68,5 +19,54 @@
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
-  }
+  },
+  "exports": {
+    "default": "./dist/mpsl.modern.js",
+    "require": "./dist/mpsl.cjs"
+  },
+  "files": [
+    "dist/mpsl.cjs",
+    "dist/mpsl.d.ts",
+    "dist/mpsl.modern.js",
+    "dist/mpsl.module.js",
+    "dist/mpsl.umd.js",
+    "src/mpsl.ts",
+    "src/psl-rules.ts"
+  ],
+  "homepage": "https://github.com/iorate/mpsl#readme",
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "keywords": [
+    "public-suffix-list",
+    "psl",
+    "effective-top-level-domain",
+    "etld"
+  ],
+  "license": "MIT",
+  "main": "dist/mpsl.cjs",
+  "module": "dist/mpsl.module.js",
+  "packageManager": "yarn@3.1.1",
+  "prettier": {
+    "arrowParens": "avoid",
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "repository": "github:iorate/mpsl",
+  "scripts": {
+    "build": "microbundle --format modern,esm,cjs --no-sourcemap && microbundle --format umd --external none --no-sourcemap",
+    "format": "prettier --write .",
+    "test": "jest",
+    "update-rules": "TS_NODE_PROJECT=scripts/tsconfig.json TS_NODE_FILES=1 node --loader=ts-node/esm scripts/generate-psl-rules.ts"
+  },
+  "source": "src/mpsl.ts",
+  "type": "module",
+  "types": "dist/mpsl.d.ts",
+  "unpkg": "dist/mpsl.umd.js"
 }
