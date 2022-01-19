@@ -2,12 +2,5 @@
 !/.yarn/patches
 !/.yarn/plugins
 !/.yarn/releases
-
-/dist/*
-!/dist/mpsl.cjs
-!/dist/mpsl.d.ts
-!/dist/mpsl.modern.js
-!/dist/mpsl.module.js
-!/dist/mpsl.umd.js
-
+/dist
 /node_modules
