@@ -27,7 +27,9 @@
     "dist/mpsl.modern.js",
     "dist/mpsl.module.js",
     "dist/mpsl.umd.js",
-    "dist/mpsl.d.ts"
+    "dist/mpsl.d.ts",
+    "src/mpsl.ts",
+    "src/psl-rules.ts"
   ],
   "scripts": {
     "format": "prettier --write .",
