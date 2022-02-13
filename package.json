@@ -21,8 +21,8 @@
     "typescript": "^4.4.4"
   },
   "exports": {
-    "default": "./dist/mpsl.modern.js",
-    "require": "./dist/mpsl.cjs"
+    "require": "./dist/mpsl.cjs",
+    "default": "./dist/mpsl.modern.js"
   },
   "files": [
     "dist/mpsl.cjs",
