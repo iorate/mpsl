@@ -3,6 +3,7 @@ name: update
 on:
   schedule:
     - cron: '0 15 * * SUN'
+  workflow_dispatch:
 
 jobs:
   update:
